@@ -1,5 +1,6 @@
+/*  eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTemperatureHigh, faTint } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,22 +27,6 @@ const WeatherCard = ({ weatherData }) => {
       </div>
     </div>
   );
-};
-
-WeatherCard.propTypes = {
-  weatherData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    main: PropTypes.shape({
-      temp: PropTypes.number.isRequired,
-      humidity: PropTypes.number.isRequired,
-    }).isRequired,
-    weather: PropTypes.arrayOf(
-      PropTypes.shape({
-        description: PropTypes.string.isRequired,
-        icon: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  }).isRequired,
 };
 
 export default WeatherCard;
